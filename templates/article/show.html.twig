@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %} {{ title }} {% endblock %}
+{% block body %}
+{# There are comments #}
+<h1>{{  title }}</h1>
+<div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto asperiores beatae blanditiis culpa
+        doloribus, enim eveniet excepturi facilis fugit impedit laborum mollitia neque optio perspiciatis quod ratione
+        sit voluptatum.</p>
+    <p>Ab accusantium architecto at autem consectetur cum doloremque ducimus fuga itaque laborum, nam natus nemo, nulla
+        numquam odio omnis optio possimus quas quia quibusdam quisquam repudiandae ut, vel voluptas voluptates.</p>
+    <p>Adipisci ea impedit perspiciatis quo sit. Cupiditate deleniti dicta exercitationem iste magnam, minus officia
+        officiis qui quisquam repudiandae suscipit tempora totam vel veritatis voluptatibus. Accusamus aliquid aut
+        consequuntur deserunt maxime!</p>
+    <p>Aliquid at autem beatae eveniet, soluta ullam voluptatum. Asperiores aspernatur assumenda cum delectus dolor,
+        dolorem doloribus dolorum eum harum hic labore neque nihil nulla quia saepe sapiente, unde ut, voluptatibus.</p>
+</div>
+<h2>Comments ({{ comments|length }})</h2>
+
+<ul>
+    {% for comment in comments %}
+        <li>{{ comment }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

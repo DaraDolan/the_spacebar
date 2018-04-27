@@ -4,10 +4,11 @@
 namespace App\Controller;
 
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class ArticleController
+class ArticleController extends AbstractController
 {
 
     /**
@@ -23,9 +24,18 @@ class ArticleController
      */
     public function show($slug)
     {
-        return new Response(sprintf(
-            'I want to show the article: %s',
-            $slug
-        ));
+        $comments = [
+            'I like to make a comment on all the things',
+            'I have nothing to say',
+            'What is your name',
+        ];
+
+        return $this->render(
+            'article/show.html.twig',
+            [
+                'title'    => ucwords(str_replace('-', ' ', $slug)),
+                'comments' => $comments,
+            ]
+        );
     }
 }
