@@ -23,6 +23,9 @@ class ArticleController
      */
     public function show($slug)
     {
-        return new Response('News: ' . $slug);
+        return new Response(sprintf(
+            'I want to show the article: %s',
+            $slug
+        ));
     }
 }
